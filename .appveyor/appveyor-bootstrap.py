@@ -125,7 +125,7 @@ def install_pip(home):
     python_path = home + "/python.exe"
     if exists(pip_path):
         log.info("pip already installed, try to upgrade it.")
-        cmd = [python_path, "-m pip install --upgrade pip"]
+        cmd = [python_path, "-m", "pip", "install", "--upgrade", "pip"]
         check_call(cmd)
     else:
         log.info("Installing pip.")
