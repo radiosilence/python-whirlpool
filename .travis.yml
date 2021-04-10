@@ -47,10 +47,12 @@ before_install:
       if [[ $TRAVIS_PYTHON_VERSION == "2.7" ]]; then
         echo "Installing python 2.";
         brew install python@2 1>&2 || travis_terminate 1;
+        pip install virtualenv || travis_terminate 1;
         virtualenv venv -p python2;
       elif [[ $TRAVIS_PYTHON_VERSION == "3.9" ]]; then
         echo "Installing python 3.";
         brew install python@3.9 1>&2 || travis_terminate 1;
+        pip3 install virtualenv || travis_terminate 1;
         virtualenv venv -p python3;
       fi;
       source venv/bin/activate || travis_terminate 1;
