@@ -116,6 +116,10 @@ jobs:
       python: 3.9
       language: generic
       env: TRAVIS_PYTHON_VERSION=3.9
+    # Python 3.3 is only available on distro Trusty
+    - stage: test
+      python: 3.3
+      dist: trusty
     # As the deploy script fetches all build artifacts uploaded to GitHub of
     # all stages, we only need to run it once.
     # So pinning it to Python 3.9 on Linux.
